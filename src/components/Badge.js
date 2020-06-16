@@ -3,8 +3,17 @@ import React from 'react'
 import "./styles/Badge.css"
 import confLogo from '../images/badge-header.svg'
 
+const nameStyle = {
+    fontSize: 25,
+    width: 50,
+}
+
 class Badge extends React.Component {
     render() {
+        
+        const firstName = 'Joshua',
+              lastName = 'Davis'
+
         return (
             <div className="Badge">
                 <div className="Badge__header">
@@ -12,13 +21,13 @@ class Badge extends React.Component {
                 </div>
 
                 <div className="Badge__section-name">
-                    <img className="Badge__avatar" src="https://secure.gravatar.com/avatar/ddc1b32ee608ad129a157e54976e7516" alt="Avatar"></img>
-                    <h1><small>Mr.</small> <br></br> Joshi</h1>
+                    <img className="Badge__avatar" src={this.props.avatarUrl} alt="Avatar"></img>
+                    <h1><small style={nameStyle}>{this.props.firstName}</small> <br></br> {this.props.lastName}</h1>
                 </div>
 
                 <div className="Badge__section-info">
-                    <p>Frontend Developer/UI Designer</p>
-                    <p>@therookie</p>
+                    <h3>{this.props.jobTitle}</h3>
+                    <div>@{this.props.twitter}</div>
                 </div>
 
                 <div className="Badge__footer">
